@@ -51,8 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         String state_city= listitem.getCity()+","+listitem.getState();
         viewHolder.textViewcity.setText(state_city);
 
-        String name=listitem.getName();
-       // String str= name.split()
+
 
 
 
