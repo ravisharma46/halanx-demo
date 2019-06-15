@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText user_id,user_password;
     private Button signIn;
+
     private static final String myUrl="http://testapi.halanx.com/rest-auth/login/?username=test&password=test";
 
 
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         final String password = user_password.getText().toString();
 
 
-       // validating inputs
+       //----- validating inputs-----
         if (username.isEmpty()) {
             user_id.setError("Please enter your username");
             user_id.requestFocus();
@@ -90,20 +92,21 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        //if everything is fine
+        //----if everything is fine-----
         StringRequest stringRequest = new StringRequest(Request.Method.POST, myUrl,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                      //  progressBar.setVisibility(View.GONE);
+
 
                         try {
                             //converting response to json object
                             JSONObject obj = new JSONObject(response);
 
-
-
                             Toast.makeText(getApplicationContext(), "Succesfully login", Toast.LENGTH_SHORT).show();
+
+                            Intent i= new Intent(MainActivity.this,HomeScreenActivity.class);
+                            startActivity(i);
 
 
                         } catch (JSONException e) {
