@@ -3,10 +3,17 @@ package com.example.apple.halanx_test_app;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,10 +64,11 @@ public class MainActivity extends AppCompatActivity {
         user_id= (EditText) findViewById(R.id.userName);
         user_password =(EditText) findViewById(R.id.passWord);
         signIn =(Button) findViewById(R.id.sign_in_bt);
+        getSupportActionBar().setTitle("Welcome");
 
 
 
-          signIn.setOnClickListener(new View.OnClickListener() {
+        signIn.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
           userLogin();
@@ -136,11 +144,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
-
 
 }
 
