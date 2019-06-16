@@ -10,8 +10,12 @@ public class Listitem {
     String security_deposit_from;
     String accomodation_allowed_str;
     String available_bed_count;
+    String house_type;
+    String furnish_type;
 
-    public Listitem(String name,String city,String state,String pic,String rent,String deposite,String accomd, String bed){
+    public Listitem(String name,String city,String state,String pic,
+                    String rent,String deposite,String accomd,
+                    String bed,String house_type,String furnish_type){
         this.name=name;
         this.city=city;
         this.state=state;
@@ -20,6 +24,8 @@ public class Listitem {
         this.security_deposit_from=deposite;
         this.accomodation_allowed_str=accomd;
         this.available_bed_count=bed;
+        this.house_type=house_type;
+        this.furnish_type=furnish_type;
     }
 
     public String getRent_from() {
@@ -52,5 +58,13 @@ public class Listitem {
 
     public String getState() {
         return state;
+    }
+
+    public String getFurnish_type() {
+        return furnish_type;
+    }
+
+    public String getHouse_type() {
+        return house_type;
     }
 }
