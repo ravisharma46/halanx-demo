@@ -1,11 +1,19 @@
 package com.example.apple.halanx_test_app;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -38,6 +46,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         recyclerView =(RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Delhi");
+
+
 
         listitems=new ArrayList<>();
         loadRecyclerViewData();
@@ -83,7 +97,9 @@ public class HomeScreenActivity extends AppCompatActivity {
                                         obj.getString("rent_from"),
                                         obj.getString("security_deposit_from"),
                                         obj.getString("accomodation_allowed_str"),
-                                        obj.getString("available_bed_count")
+                                        obj.getString("available_bed_count"),
+                                        obj.getString("house_type"),
+                                        obj.getString("furnish_type")
 
 
                                 );
@@ -120,5 +136,36 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            case R.id.action_favorite:
+                Intent i= new Intent(getApplicationContext(),filter_activity.class);
+                startActivity(i);
+                return true;
+
+
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
