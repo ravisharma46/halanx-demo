@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private List<Listitem> listitems;
     private Context context;
+    //ValueFilter valueFilter;
 
     public MyAdapter(List<Listitem> listitems, Context context) {
         this.listitems = listitems;
@@ -92,4 +94,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             linearLayout=(LinearLayout) itemView.findViewById(R.id.linearLayout);
         }
     }
+
+
+
 }
