@@ -45,7 +45,7 @@
                     android:textSize="18sp"
                     android:id="@+id/min"
                     android:inputType="numberSigned"
-                    android:text="50000"
+                    android:text="5000"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
@@ -67,7 +67,7 @@
                     android:textSize="18sp"
                     android:id="@+id/max"
                     android:inputType="numberSigned"
-                    android:text="500000"
+                    android:text="50000"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
