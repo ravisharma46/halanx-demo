@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText user_id,user_password;
     private Button signIn;
 
-    private static final String myUrl="http://testapi.halanx.com/rest-auth/login/?username=test&password=test";
+    private static final String myUrl="http://testapi.halanx.com/rest-auth/login/";
 
 
     @Override
